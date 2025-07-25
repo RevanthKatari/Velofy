@@ -17,6 +17,35 @@ html, body {
   overflow: hidden;
 }
 
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-accent);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -24,6 +53,13 @@ html, body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+}
+
+.speed-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .speed-display {
@@ -60,4 +96,162 @@ html, body {
 #toggle-unit:active {
   background: var(--color-accent);
   color: #fff;
+}
+
+/* Navigation */
+.app-nav {
+  position: fixed;
+  bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.nav-button {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--color-fg);
+  font-size: 0.9rem;
+  padding: 0.5em 1.2em;
+  border-radius: 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  backdrop-filter: blur(10px);
+}
+
+.nav-button:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.nav-button:active {
+  background: var(--color-accent);
+  transform: translateY(0);
+}
+
+/* Content Sections */
+.content-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg);
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  z-index: 200;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.content-section.active {
+  transform: translateY(0);
+}
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.content-container h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+.content-container h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin: 1.5rem 0 0.5rem 0;
+  color: var(--color-accent);
+}
+
+.content-container p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.content-container ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.content-container li {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.content-container strong {
+  color: var(--color-accent);
+}
+
+/* FAQ Items */
+.faq-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.faq-item h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  margin-bottom: 0;
+}
+
+/* Close button for content sections */
+.content-section::before {
+  content: "✕";
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--color-fg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 210;
+  backdrop-filter: blur(10px);
+}
+
+.content-section::before:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1rem;
+  }
+  
+  .app-nav {
+    bottom: 1rem;
+  }
+  
+  .nav-button {
+    font-size: 0.8rem;
+    padding: 0.4em 1em;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

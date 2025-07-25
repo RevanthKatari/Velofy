@@ -129,4 +129,123 @@ if (localStorage.getItem('useMph') === '1') {
   useMph = true;
 }
 
+// Content section functionality
+const faqToggle = document.getElementById('faq-toggle');
+const infoToggle = document.getElementById('info-toggle');
+const faqSection = document.getElementById('faq-section');
+const infoSection = document.getElementById('info-section');
+
+let activeSection = null;
+
+function closeActiveSection() {
+  if (activeSection) {
+    activeSection.classList.remove('active');
+    activeSection.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'hidden';
+    activeSection = null;
+  }
+}
+
+function openSection(section) {
+  closeActiveSection();
+  activeSection = section;
+  section.classList.add('active');
+  section.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'auto';
+}
+
+
+
+// Prevent body scroll when sections are open
+function handleSectionScroll() {
+  if (activeSection) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'hidden'; // Keep original behavior
+  }
+}
+
+// Handle URL fragments for direct linking (SEO)
+function handleUrlFragment() {
+  const hash = window.location.hash;
+  if (hash === '#faq' && faqSection) {
+    openSection(faqSection);
+  } else if (hash === '#info' && infoSection) {
+    openSection(infoSection);
+  }
+}
+
+// Handle browser back/forward navigation
+window.addEventListener('popstate', handleUrlFragment);
+
+// Update URL when sections are opened/closed
+function updateUrl(sectionId) {
+  const url = sectionId ? `${window.location.pathname}#${sectionId}` : window.location.pathname;
+  window.history.pushState(null, '', url);
+}
+
+// Enhanced open/close functions with URL management
+function openSectionWithUrl(section, sectionId) {
+  openSection(section);
+  updateUrl(sectionId);
+}
+
+function closeActiveSectionWithUrl() {
+  closeActiveSection();
+  updateUrl('');
+}
+
+// Update FAQ toggle with URL management
+if (faqToggle && faqSection) {
+  faqToggle.addEventListener('click', () => {
+    if (activeSection === faqSection) {
+      closeActiveSectionWithUrl();
+    } else {
+      openSectionWithUrl(faqSection, 'faq');
+    }
+  });
+}
+
+// Update Info toggle with URL management
+if (infoToggle && infoSection) {
+  infoToggle.addEventListener('click', () => {
+    if (activeSection === infoSection) {
+      closeActiveSectionWithUrl();
+    } else {
+      openSectionWithUrl(infoSection, 'info');
+    }
+  });
+}
+
+// Update close button functionality
+document.addEventListener('click', (e) => {
+  if (activeSection && e.target === activeSection) {
+    const rect = activeSection.getBoundingClientRect();
+    const closeButtonArea = {
+      left: rect.right - 80,
+      right: rect.right - 20,
+      top: rect.top + 20,
+      bottom: rect.top + 80
+    };
+    
+    if (e.clientX >= closeButtonArea.left && 
+        e.clientX <= closeButtonArea.right && 
+        e.clientY >= closeButtonArea.top && 
+        e.clientY <= closeButtonArea.bottom) {
+      closeActiveSectionWithUrl();
+    }
+  }
+});
+
+// Update escape key functionality
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && activeSection) {
+    closeActiveSectionWithUrl();
+  }
+});
+
+// Initialize
+handleSectionScroll();
+handleUrlFragment(); // Check for initial URL fragment
+
 requestAnimationFrame(animate);

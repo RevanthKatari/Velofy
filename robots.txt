@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://velofy-speed.vercel.app/sitemap.xml
+
+# Allow all important files
+Allow: /index.html
+Allow: /app.js
+Allow: /style.css
+Allow: /manifest.json
+Allow: /icon-192.png
+Allow: /icon-512.png
+Allow: /service-worker.js
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
