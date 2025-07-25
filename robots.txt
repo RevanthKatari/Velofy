@@ -13,5 +13,15 @@ Allow: /icon-192.png
 Allow: /icon-512.png
 Allow: /service-worker.js
 
+# Allow important content sections for SEO
+Allow: /#faq
+Allow: /#info
+Allow: /#features
+Allow: /#safety
+
 # Crawl delay (optional, helps with server load)
 Crawl-delay: 1
+
+# Additional SEO directives
+# Host directive for canonical domain
+Host: https://velofy-speed.vercel.app
