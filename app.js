@@ -73,4 +73,42 @@ if (localStorage.getItem('useMph') === '1') {
   useMph = true;
 }
 
+// TEST BUTTON: Simulate 0 to 180 km/h in 30 seconds
+const testBtn = document.createElement('button');
+testBtn.textContent = 'Test: 0→180 in 30s';
+testBtn.style.position = 'fixed';
+testBtn.style.bottom = '20px';
+testBtn.style.right = '20px';
+testBtn.style.zIndex = 1000;
+testBtn.style.background = '#fff';
+testBtn.style.color = '#000';
+testBtn.style.padding = '0.5em 1.5em';
+testBtn.style.borderRadius = '1em';
+testBtn.style.border = 'none';
+testBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+testBtn.style.cursor = 'pointer';
+testBtn.style.fontWeight = 'bold';
+testBtn.style.fontSize = '1.1em';
+testBtn.style.opacity = '0.85';
+testBtn.onmouseenter = () => testBtn.style.opacity = '1';
+testBtn.onmouseleave = () => testBtn.style.opacity = '0.85';
+document.body.appendChild(testBtn);
+
+testBtn.addEventListener('click', () => {
+  let start = null;
+  const duration = 30000; // 30 seconds
+  function step(ts) {
+    if (!start) start = ts;
+    const elapsed = ts - start;
+    const t = Math.min(elapsed / duration, 1);
+    currentSpeed = 180 * t;
+    if (t < 1) {
+      requestAnimationFrame(step);
+    } else {
+      currentSpeed = 180;
+    }
+  }
+  requestAnimationFrame(step);
+});
+
 requestAnimationFrame(animate);
