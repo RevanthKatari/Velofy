@@ -7,7 +7,7 @@
   <!-- Main page -->
   <url>
     <loc>https://velofy-speed.vercel.app/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- FAQ section (accessible via fragment) -->
   <url>
     <loc>https://velofy-speed.vercel.app/#faq</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -23,17 +23,41 @@
   <!-- Info section (accessible via fragment) -->
   <url>
     <loc>https://velofy-speed.vercel.app/#info</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Features section (accessible via fragment) -->
+  <url>
+    <loc>https://velofy-speed.vercel.app/#features</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Safety section (accessible via fragment) -->
+  <url>
+    <loc>https://velofy-speed.vercel.app/#safety</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- PWA Manifest -->
   <url>
     <loc>https://velofy-speed.vercel.app/manifest.json</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-07-25</lastmod>
     <changefreq>rarely</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <!-- Robots.txt -->
+  <url>
+    <loc>https://velofy-speed.vercel.app/robots.txt</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>rarely</changefreq>
+    <priority>0.2</priority>
   </url>
 
 </urlset>

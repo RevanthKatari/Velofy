@@ -132,8 +132,12 @@ if (localStorage.getItem('useMph') === '1') {
 // Content section functionality
 const faqToggle = document.getElementById('faq-toggle');
 const infoToggle = document.getElementById('info-toggle');
+const featuresToggle = document.getElementById('features-toggle');
+const safetyToggle = document.getElementById('safety-toggle');
 const faqSection = document.getElementById('faq-section');
 const infoSection = document.getElementById('info-section');
+const featuresSection = document.getElementById('features-section');
+const safetySection = document.getElementById('safety-section');
 
 let activeSection = null;
 
@@ -172,6 +176,10 @@ function handleUrlFragment() {
     openSection(faqSection);
   } else if (hash === '#info' && infoSection) {
     openSection(infoSection);
+  } else if (hash === '#features' && featuresSection) {
+    openSection(featuresSection);
+  } else if (hash === '#safety' && safetySection) {
+    openSection(safetySection);
   }
 }
 
@@ -213,6 +221,28 @@ if (infoToggle && infoSection) {
       closeActiveSectionWithUrl();
     } else {
       openSectionWithUrl(infoSection, 'info');
+    }
+  });
+}
+
+// Update Features toggle with URL management
+if (featuresToggle && featuresSection) {
+  featuresToggle.addEventListener('click', () => {
+    if (activeSection === featuresSection) {
+      closeActiveSectionWithUrl();
+    } else {
+      openSectionWithUrl(featuresSection, 'features');
+    }
+  });
+}
+
+// Update Safety toggle with URL management
+if (safetyToggle && safetySection) {
+  safetyToggle.addEventListener('click', () => {
+    if (activeSection === safetySection) {
+      closeActiveSectionWithUrl();
+    } else {
+      openSectionWithUrl(safetySection, 'safety');
     }
   });
 }
