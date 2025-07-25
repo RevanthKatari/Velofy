@@ -1,10 +1,12 @@
 const speedEl = document.getElementById('speed');
 const unitEl = document.getElementById('unit');
 const toggleBtn = document.getElementById('toggle-unit');
+const testBtn = document.getElementById('test-visualization');
 
 let useMph = false;
 let currentSpeed = 0;
 let displayedSpeed = 0;
+let testActive = false;
 
 function kmhToMph(kmh) {
   return kmh * 0.621371;
@@ -127,6 +129,50 @@ if (toggleBtn) {
 // Restore unit preference
 if (localStorage.getItem('useMph') === '1') {
   useMph = true;
+}
+
+if (testBtn) {
+  testBtn.addEventListener('click', () => {
+    if (testActive) return;
+    testActive = true;
+    let testStart = performance.now();
+    let testDuration = 3000; // ms
+    let testEnd = testStart + testDuration;
+    let testBackDuration = 1000;
+    let testBackEnd = testEnd + testBackDuration;
+    function testStep(now) {
+      if (now < testEnd) {
+        let t = (now - testStart) / testDuration;
+        let speed = lerp(0, 180, t);
+        numberAnimFrom = displayedSpeed;
+        numberAnimTo = speed;
+        numberAnimStart = performance.now();
+        const [bg, accent] = getColorForSpeed(speed);
+        colorTarget.bg = hexToRgb(bg);
+        colorTarget.accent = hexToRgb(accent);
+        requestAnimationFrame(testStep);
+      } else if (now < testBackEnd) {
+        let t = (now - testEnd) / testBackDuration;
+        let speed = lerp(180, 0, t);
+        numberAnimFrom = displayedSpeed;
+        numberAnimTo = speed;
+        numberAnimStart = performance.now();
+        const [bg, accent] = getColorForSpeed(speed);
+        colorTarget.bg = hexToRgb(bg);
+        colorTarget.accent = hexToRgb(accent);
+        requestAnimationFrame(testStep);
+      } else {
+        numberAnimFrom = displayedSpeed;
+        numberAnimTo = 0;
+        numberAnimStart = performance.now();
+        const [bg, accent] = getColorForSpeed(0);
+        colorTarget.bg = hexToRgb(bg);
+        colorTarget.accent = hexToRgb(accent);
+        testActive = false;
+      }
+    }
+    requestAnimationFrame(testStep);
+  });
 }
 
 requestAnimationFrame(animate);

@@ -61,3 +61,22 @@ html, body {
   background: var(--color-accent);
   color: #fff;
 }
+
+#test-visualization {
+  margin-top: 2vh;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: var(--color-fg);
+  font-size: clamp(1rem, 1.2rem, 2rem);
+  padding: 0.7em 2em;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  outline: none;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+}
+
+#test-visualization:active {
+  background: var(--color-accent);
+  color: #fff;
+}
