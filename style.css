@@ -27,18 +27,18 @@ html, body {
 }
 
 .speed-display {
-  font-size: 8vw;
+  font-size: clamp(2.5rem, 10vw, 10rem);
   font-weight: 700;
   letter-spacing: -0.05em;
   display: flex;
   align-items: baseline;
-  gap: 1vw;
+  gap: clamp(0.5rem, 1vw, 2rem);
   user-select: none;
   transition: color 0.6s cubic-bezier(.4,0,.2,1);
 }
 
 #unit {
-  font-size: 2vw;
+  font-size: clamp(1rem, 2vw, 3rem);
   font-weight: 400;
   opacity: 0.7;
 }
@@ -48,7 +48,7 @@ html, body {
   background: rgba(255,255,255,0.08);
   border: none;
   color: var(--color-fg);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.2rem, 2rem);
   padding: 0.7em 2em;
   border-radius: 2em;
   cursor: pointer;
