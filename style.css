@@ -51,8 +51,10 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 6rem);
   width: 100vw;
+  padding-bottom: 6rem;
+  box-sizing: border-box;
 }
 
 .speed-section {
@@ -106,15 +108,16 @@ html, body {
   transform: translateX(-50%);
   display: flex;
   gap: 0.8rem;
-  z-index: 100;
+  z-index: 1000;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 90vw;
+  pointer-events: auto;
 }
 
 .nav-button {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
   color: var(--color-fg);
   font-size: 0.9rem;
   padding: 0.5em 1.2em;
@@ -123,6 +126,8 @@ html, body {
   transition: all 0.3s ease;
   outline: none;
   backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-weight: 500;
 }
 
 .nav-button:hover {
@@ -246,10 +251,17 @@ html, body {
     padding: 1rem;
   }
   
+  #app {
+    height: calc(100vh - 4rem);
+    padding-bottom: 4rem;
+  }
+  
   .app-nav {
     bottom: 1rem;
     gap: 0.5rem;
     max-width: 95vw;
+    position: fixed !important;
+    display: flex !important;
   }
   
   .nav-button {
