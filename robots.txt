@@ -1,0 +1,26 @@
+# Robots.txt for Velofy Speed
+# https://velofy-speed.vercel.app/
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://velofy-speed.vercel.app/sitemap.xml
+
+# Crawl-delay for responsible crawling
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

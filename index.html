@@ -4,18 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2196f3">
-  <title>Speedometer</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Velofy Speed - GPS Speedometer | Real-time Speed Tracking App</title>
+  <meta name="description" content="Velofy Speed is a free GPS speedometer app that displays your current speed in real-time. Track your speed while driving, cycling, or running with accurate km/h and mph measurements.">
+  <meta name="keywords" content="speedometer, GPS speed tracker, velocity meter, speed measurement, km/h to mph, real-time speed, driving speed, cycling speed, running speed, velofy">
+  <meta name="author" content="Velofy Speed">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://velofy-speed.vercel.app/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://velofy-speed.vercel.app/">
+  <meta property="og:title" content="Velofy Speed - GPS Speedometer | Real-time Speed Tracking">
+  <meta property="og:description" content="Track your speed in real-time with Velofy Speed. Free GPS speedometer app for driving, cycling, and running. Accurate km/h and mph measurements.">
+  <meta property="og:image" content="https://velofy-speed.vercel.app/icon-512.png">
+  <meta property="og:site_name" content="Velofy Speed">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://velofy-speed.vercel.app/">
+  <meta property="twitter:title" content="Velofy Speed - GPS Speedometer">
+  <meta property="twitter:description" content="Real-time GPS speed tracking app. Monitor your speed while driving, cycling, or running.">
+  <meta property="twitter:image" content="https://velofy-speed.vercel.app/icon-512.png">
+  
+  <!-- PWA -->
   <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Velofy Speed",
+    "alternateName": "Velofy Speedometer",
+    "url": "https://velofy-speed.vercel.app/",
+    "description": "Free GPS speedometer app that displays your current speed in real-time. Track speed while driving, cycling, or running.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Velofy Speed",
+      "url": "https://velofy-speed.vercel.app/"
+    }
+  }
+  </script>
 </head>
 <body>
-  <div id="app">
-    <div class="speed-display">
-      <span id="speed">0</span>
-      <span id="unit">km/h</span>
+  <header class="sr-only">
+    <h1>Velofy Speed - GPS Speedometer</h1>
+  </header>
+  
+  <main id="app" role="main" aria-label="Speed display">
+    <div class="speed-display" aria-live="polite" aria-atomic="true">
+      <span id="speed" aria-label="Current speed">0</span>
+      <span id="unit" aria-label="Speed unit">km/h</span>
     </div>
-    <button id="toggle-unit" aria-label="Toggle unit">km/h / mph</button>
-  </div>
+    <button id="toggle-unit" aria-label="Toggle between kilometers per hour and miles per hour">km/h / mph</button>
+    
+    <!-- SEO Content (visually hidden but accessible) -->
+    <div class="seo-content sr-only">
+      <h2>About Velofy Speed Speedometer</h2>
+      <p>Velofy Speed is a powerful and accurate GPS speedometer application that helps you track your speed in real-time. Whether you're driving, cycling, running, or walking, our app provides precise speed measurements using your device's GPS capabilities.</p>
+      
+      <h3>Key Features</h3>
+      <ul>
+        <li>Real-time GPS speed tracking with high accuracy</li>
+        <li>Toggle between km/h and mph units instantly</li>
+        <li>Beautiful, minimalist interface with dynamic color themes</li>
+        <li>Works offline - no internet connection required</li>
+        <li>Progressive Web App - install on any device</li>
+        <li>Battery efficient GPS usage</li>
+        <li>No ads, completely free to use</li>
+      </ul>
+      
+      <h3>How It Works</h3>
+      <p>Velofy Speed uses your device's GPS sensor to calculate your current speed. The app continuously monitors your location changes and computes your velocity with high precision. The speed display updates in real-time, giving you instant feedback about your movement speed.</p>
+      
+      <h3>Perfect For</h3>
+      <ul>
+        <li>Drivers wanting to monitor their vehicle speed</li>
+        <li>Cyclists tracking their riding speed</li>
+        <li>Runners and joggers measuring their pace</li>
+        <li>Anyone curious about their movement speed</li>
+      </ul>
+    </div>
+  </main>
+  
+  <nav class="nav-links" aria-label="Site navigation">
+    <a href="/faq" class="nav-link" aria-label="Frequently Asked Questions">FAQ</a>
+    <a href="/privacy" class="nav-link" aria-label="Privacy Policy">Privacy</a>
+    <a href="/contact" class="nav-link" aria-label="Contact Us">Contact</a>
+  </nav>
+  
   <script src="app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {

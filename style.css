@@ -61,3 +61,61 @@ html, body {
   background: var(--color-accent);
   color: #fff;
 }
+
+/* Screen reader only content for SEO */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Navigation links */
+.nav-links {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .nav-links {
+    bottom: 1rem;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

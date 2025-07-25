@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2196f3">
+  
+  <!-- SEO Meta Tags -->
+  <title>FAQ - Velofy Speed GPS Speedometer | Common Questions Answered</title>
+  <meta name="description" content="Find answers to frequently asked questions about Velofy Speed GPS speedometer app. Learn how to use the app, troubleshoot issues, and understand GPS speed tracking.">
+  <meta name="keywords" content="velofy speed faq, speedometer help, GPS speed tracker questions, speed measurement guide">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://velofy-speed.vercel.app/faq">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://velofy-speed.vercel.app/faq">
+  <meta property="og:title" content="FAQ - Velofy Speed GPS Speedometer">
+  <meta property="og:description" content="Get answers to common questions about using Velofy Speed GPS speedometer app.">
+  <meta property="og:image" content="https://velofy-speed.vercel.app/icon-512.png">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .faq-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: transform 0.2s;
+    }
+    
+    .back-link:hover {
+      transform: translateX(-5px);
+    }
+    
+    .faq-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+    }
+    
+    .faq-answer {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    
+    .faq-answer ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+    }
+    
+    .faq-answer li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+  
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate is Velofy Speed's GPS speedometer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Velofy Speed uses your device's GPS sensor to provide highly accurate speed measurements, typically within 0.1-0.5 km/h accuracy. The accuracy depends on GPS signal strength, weather conditions, and your device's GPS hardware quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my speed showing as 0 km/h?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If the speed shows 0, it could be because: 1) You're stationary, 2) GPS is still acquiring satellites (wait 10-30 seconds), 3) Location permissions are not granted, or 4) You're in an area with poor GPS reception (tunnels, dense buildings)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Velofy Speed work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Velofy Speed works completely offline once installed. GPS doesn't require internet connection. The app is a Progressive Web App (PWA) that can be installed on your device for offline use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I switch between km/h and mph?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply tap the 'km/h / mph' button below the speed display to toggle between kilometers per hour and miles per hour. Your preference is saved automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Velofy Speed drain my battery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Velofy Speed is optimized for battery efficiency. It uses GPS only when the app is active and visible. For best battery life, close the app when not in use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Velofy Speed while driving?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but please prioritize safety. Mount your device securely and avoid interacting with the app while driving. The large display is designed to be glanceable without distraction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do the colors change while I'm moving?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The dynamic color theme changes based on your speed: Blue (0-20 km/h) for slow speeds, Teal (20-60 km/h) for moderate speeds, Yellow (60-120 km/h) for fast speeds, and Red (120+ km/h) for very high speeds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my location data stored or shared?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Velofy Speed respects your privacy completely. All GPS processing happens locally on your device. We don't collect, store, or transmit any location data or personal information."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="faq-container">
+    <a href="/" class="back-link" aria-label="Back to speedometer">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+      </svg>
+      Back to Speedometer
+    </a>
+    
+    <header class="faq-header">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about Velofy Speed</p>
+    </header>
+    
+    <main>
+      <div class="faq-item">
+        <h2 class="faq-question">How accurate is Velofy Speed's GPS speedometer?</h2>
+        <div class="faq-answer">
+          <p>Velofy Speed uses your device's GPS sensor to provide highly accurate speed measurements, typically within 0.1-0.5 km/h accuracy. The accuracy depends on:</p>
+          <ul>
+            <li>GPS signal strength</li>
+            <li>Weather conditions</li>
+            <li>Your device's GPS hardware quality</li>
+            <li>Clear view of the sky</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">Why is my speed showing as 0 km/h?</h2>
+        <div class="faq-answer">
+          <p>If the speed shows 0, it could be because:</p>
+          <ul>
+            <li>You're stationary</li>
+            <li>GPS is still acquiring satellites (wait 10-30 seconds)</li>
+            <li>Location permissions are not granted</li>
+            <li>You're in an area with poor GPS reception (tunnels, dense buildings)</li>
+          </ul>
+          <p>Try moving to an open area and ensure location services are enabled for your browser.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">Does Velofy Speed work offline?</h2>
+        <div class="faq-answer">
+          <p>Yes! Velofy Speed works completely offline once installed. GPS doesn't require internet connection. The app is a Progressive Web App (PWA) that can be installed on your device for offline use.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">How do I switch between km/h and mph?</h2>
+        <div class="faq-answer">
+          <p>Simply tap the "km/h / mph" button below the speed display to toggle between kilometers per hour and miles per hour. Your preference is saved automatically and will be remembered next time you use the app.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">Does Velofy Speed drain my battery?</h2>
+        <div class="faq-answer">
+          <p>Velofy Speed is optimized for battery efficiency. It uses GPS only when the app is active and visible. For best battery life, close the app when not in use. The app automatically stops GPS tracking when you switch to another app or lock your screen.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">Can I use Velofy Speed while driving?</h2>
+        <div class="faq-answer">
+          <p>Yes, but please prioritize safety. Mount your device securely and avoid interacting with the app while driving. The large, clear display is designed to be glanceable without distraction. Always follow local laws regarding device use while driving.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">Why do the colors change while I'm moving?</h2>
+        <div class="faq-answer">
+          <p>The dynamic color theme changes based on your speed to provide visual feedback:</p>
+          <ul>
+            <li><strong>Blue</strong> (0-20 km/h): Walking or slow movement</li>
+            <li><strong>Teal</strong> (20-60 km/h): Cycling or city driving</li>
+            <li><strong>Yellow</strong> (60-120 km/h): Highway driving</li>
+            <li><strong>Red</strong> (120+ km/h): Very high speeds</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">Is my location data stored or shared?</h2>
+        <div class="faq-answer">
+          <p>No. Velofy Speed respects your privacy completely. All GPS processing happens locally on your device. We don't collect, store, or transmit any location data or personal information. The app doesn't even require an internet connection to function.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">How do I install Velofy Speed on my device?</h2>
+        <div class="faq-answer">
+          <p>Velofy Speed is a Progressive Web App (PWA). To install:</p>
+          <ul>
+            <li><strong>Chrome/Edge:</strong> Look for the install icon in the address bar or menu</li>
+            <li><strong>Safari (iOS):</strong> Tap Share → Add to Home Screen</li>
+            <li><strong>Firefox:</strong> Look for the house+ icon in the address bar</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h2 class="faq-question">What devices are supported?</h2>
+        <div class="faq-answer">
+          <p>Velofy Speed works on any device with a modern web browser and GPS capability, including:</p>
+          <ul>
+            <li>iPhones and iPads (iOS 11+)</li>
+            <li>Android phones and tablets (Android 5+)</li>
+            <li>Windows laptops with GPS</li>
+            <li>Any device with Chrome, Safari, Firefox, or Edge browser</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

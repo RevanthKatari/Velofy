@@ -1,20 +1,46 @@
 {
-  "name": "Speedometer",
-  "short_name": "Speedo",
-  "start_url": ".",
+  "name": "Velofy Speed - GPS Speedometer",
+  "short_name": "Velofy Speed",
+  "description": "Real-time GPS speedometer app. Track your speed while driving, cycling, or running with accurate km/h and mph measurements.",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#1a237e",
   "theme_color": "#2196f3",
+  "categories": ["utilities", "navigation", "sports"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "label": "Velofy Speed in action"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Tracking",
+      "short_name": "Track",
+      "description": "Start tracking your speed",
+      "url": "/?action=track",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

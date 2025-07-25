@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+  <url>
+    <loc>https://velofy-speed.vercel.app/</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://velofy-speed.vercel.app/faq</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://velofy-speed.vercel.app/privacy</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://velofy-speed.vercel.app/contact</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+</urlset>
